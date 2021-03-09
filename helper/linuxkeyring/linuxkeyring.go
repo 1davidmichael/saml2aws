@@ -17,11 +17,8 @@ type KeyringHelper struct {
 func NewKeyringHelper() (*KeyringHelper, error) {
 	kr, err := keyring.Open(keyring.Config{
 		AllowedBackends: []keyring.BackendType{
-			keyring.KWalletBackend,
-			keyring.SecretServiceBackend,
 			keyring.PassBackend,
 		},
-		LibSecretCollectionName: "login",
 		PassPrefix:              "saml2aws",
 	})
 
